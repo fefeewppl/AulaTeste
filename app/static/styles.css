@@ -170,3 +170,69 @@ body {
 .toggle-icon:hover {
     color: #DA1E05;
 }
+
+.dashboard-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 480px;
+    margin: 40px auto;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.dashboard-container h1 {
+    color: #DA1E05;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.dashboard-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    word-break: break-word;
+}
+
+.dashboard-container form {
+    width: 100%;
+}
+
+.dashboard-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #DA1E05;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard-container button:hover {
+    background-color: #B31904;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+    .dashboard-container {
+        margin: 20px auto;
+        padding: 25px 15px;
+    }
+
+    .dashboard-container h1 {
+        font-size: 20px;
+    }
+
+    .dashboard-container p {
+        font-size: 14px;
+    }
+
+    .dashboard-container button {
+        font-size: 15px;
+        padding: 10px;
+    }
+}

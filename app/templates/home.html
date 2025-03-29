@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="login-container">
+    <div class="dashboard-container">
         <h1>Bem-vindo(a), {{ current_user.nome }}!</h1>
         <p>Você está logado com o e-mail: {{ current_user.email }}</p>
-
+    
         <form action="{{ url_for('main.logout') }}" method="post">
-            <button type="submit" class="login-button">Sair</button>
+            <button type="submit">Sair</button>
         </form>
     </div>
 </body>
