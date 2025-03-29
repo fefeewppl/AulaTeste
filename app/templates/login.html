@@ -12,7 +12,7 @@
     <div class="login-container">
         <img src="{{ url_for('static', filename='img/logo-sesi-senai.jpg') }}" alt="Logo SESI/SENAI" class="logo">
         <h1>Acesse sua conta</h1>
-        <form method="POST" action="{{ url_for('main.login') }}">
+        <form method="POST" action="{{ url_for('auth.login') }}">
             {{ form.hidden_tag() }}
 
             <div class="input-group">
@@ -30,7 +30,7 @@
 
             {{ form.submit(class_="login-button") }}
 
-            <a href="{{ url_for('main.cadastro') }}">
+            <a href="{{ url_for('auth.cadastro') }}">
                 <button type="button" class="register-button">Cadastrar</button>
             </a>
         </form>

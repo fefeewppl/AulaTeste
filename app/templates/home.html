@@ -10,7 +10,7 @@
         <h1>Bem-vindo(a), {{ current_user.nome }}!</h1>
         <p>Você está logado com o e-mail: {{ current_user.email }}</p>
     
-        <form action="{{ url_for('main.logout') }}" method="post">
+        <form action="{{ url_for('auth.logout') }}" method="post">
             <button type="submit">Sair</button>
         </form>
     </div>
