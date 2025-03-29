@@ -25,6 +25,10 @@ def login():
 def cadastro():
     form = CadastroForm()
     if form.validate_on_submit():
+        usuario_existente = Usuario.query.filter_by(email=form.email.data).first()
+        if usuario_existente:
+            flash('E-mail já cadastrado. Por favor, use outro.', 'warning')
+            return render_template('cadastro.html', form=form)
         senha_hash = bcrypt.generate_password_hash(form.senha.data).decode('utf-8')
         usuario = Usuario(nome=form.nome.data, email=form.email.data, senha=senha_hash)
         db.session.add(usuario)

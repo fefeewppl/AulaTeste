@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="login-container">
         <h1>Crie sua conta</h1>
-        
         <form method="POST" action="{{ url_for('main.cadastro') }}">
             {{ form.hidden_tag() }}
 
@@ -17,22 +18,28 @@
                 {{ form.nome.label }}
                 {{ form.nome(class_="form-control") }}
             </div>
-            
+
             <div class="input-group">
                 {{ form.email.label }}
                 {{ form.email(class_="form-control") }}
             </div>
             
-            <div class="input-group">
+            <div class="input-group password-group">
                 {{ form.senha.label }}
-                {{ form.senha(class_="form-control") }}
+                <div class="input-wrapper">
+                    {{ form.senha(id="senha", class_="form-control") }}
+                    <i class="fa-solid fa-eye toggle-icon" onclick="toggleSenha('senha', this)"></i>
+                </div>
             </div>
             
-            <div class="input-group">
+            <div class="input-group password-group">
                 {{ form.confirmar_senha.label }}
-                {{ form.confirmar_senha(class_="form-control") }}
+                <div class="input-wrapper">
+                    {{ form.confirmar_senha(id="confirmar_senha", class_="form-control") }}
+                    <i class="fa-solid fa-eye toggle-icon" onclick="toggleSenha('confirmar_senha', this)"></i>
+                </div>
             </div>
-            
+
             {{ form.submit(class_="login-button") }}
 
             <p class="login-link">
@@ -40,5 +47,18 @@
             </p>
         </form>
     </div>
+
+    <script>
+        const flashMessages = [];
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              flashMessages.push({ icon: '{{ 'error' if category == 'danger' else category }}', title: '{{ message }}' });
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        </script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
 </body>
 </html>

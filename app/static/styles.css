@@ -143,3 +143,30 @@ body {
 .login-link a:hover {
     text-decoration: underline;
 }
+
+.swal-custom-title {
+    font-size: 16px !important;  /* ou 14px se quiser menor ainda */
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    padding-right: 40px; /* espaço pro ícone */
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+}
+
+.toggle-icon:hover {
+    color: #DA1E05;
+}
