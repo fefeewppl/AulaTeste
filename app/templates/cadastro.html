@@ -11,7 +11,7 @@
 <body>
     <div class="login-container">
         <h1>Crie sua conta</h1>
-        <form method="POST" action="{{ url_for('auth.cadastro') }}">
+        <form method="POST" action="{{ url_for('cadastro.cadastro_view') }}">
             {{ form.hidden_tag() }}
 
             <div class="input-group">

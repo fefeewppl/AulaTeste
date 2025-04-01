@@ -24,8 +24,14 @@ def create_app():
 
     from app.auth.routes import auth
     from app.home.routes import home
+    from app.cadastro.routes import cadastro
 
     app.register_blueprint(auth)
     app.register_blueprint(home)
+    app.register_blueprint(cadastro)
 
-    return app  
+    with app.app_context():
+        from app.models import Usuario
+        db.create_all()
+
+    return app

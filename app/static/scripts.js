@@ -12,6 +12,7 @@ function toggleSenha(id, el) {
 }
 
 if (typeof flashMessages !== 'undefined' && flashMessages.length > 0) {
+    console.log('flashMessages:', flashMessages);
     flashMessages.forEach(msg => {
         Swal.fire({
             icon: msg.icon,

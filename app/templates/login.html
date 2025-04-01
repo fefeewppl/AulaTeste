@@ -30,7 +30,7 @@
 
             {{ form.submit(class_="login-button") }}
 
-            <a href="{{ url_for('auth.cadastro') }}">
+            <a href="{{ url_for('cadastro.cadastro_view') }}">
                 <button type="button" class="register-button">Cadastrar</button>
             </a>
         </form>
@@ -41,11 +41,15 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
             {% for category, message in messages %}
-              flashMessages.push({ icon: '{{ 'error' if category == 'danger' else category }}', title: '{{ message }}' });
+              flashMessages.push({ 
+                  icon: '{{ 'error' if category == 'danger' else category }}', 
+                  title: {{ message|tojson }} 
+              });
             {% endfor %}
           {% endif %}
         {% endwith %}
-        </script>
+    </script>
+    
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 
 </body>
