@@ -1,0 +1,130 @@
+{
+  "id": "0ba31f83-d726-4d72-95a5-d4a15241704d",
+  "version": "3.0",
+  "name": "SENAI",
+  "url": "http://www.google.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "2d8d36fe-6806-4e04-9fee-86c4a4266c44",
+      "name": "New Suite",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [
+        "f699f530-dabf-417d-9476-1b04aa0d229f"
+      ],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "f699f530-dabf-417d-9476-1b04aa0d229f",
+      "name": "Verificar Senha",
+      "commands": [
+        {
+          "command": "open",
+          "target": "http://192.168.1.112:5000/login",
+          "value": "",
+          "id": "dfbae337-7164-4c87-b2d7-d536bfdbffa0"
+        },
+        {
+          "command": "type",
+          "target": "id=email",
+          "value": "fefeew_ppl@live.com",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "4ee25469-bab5-47fb-88f6-a0c9c79535d7",
+          "targets": [
+            [
+              "id=email",
+              "id"
+            ],
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=#email",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='email'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=senha",
+          "value": "12345678",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "5f197e6f-6f52-4158-ad7e-91fb0bcdad94",
+          "targets": [
+            [
+              "id=senha",
+              "id"
+            ],
+            [
+              "name=senha",
+              "name"
+            ],
+            [
+              "css=#senha",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='senha'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "id=submit",
+          "value": "",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "f0794d02-5643-4653-9250-f0b3c687dd2e",
+          "targets": [
+            [
+              "id=submit",
+              "id"
+            ],
+            [
+              "name=submit",
+              "name"
+            ],
+            [
+              "css=#submit",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='submit'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=.swal2-title",
+          "value": "Credenciais inválidas!",
+          "id": "eb411ce7-6235-4742-a1d1-2e2ee06d27ee"
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  }
+}
